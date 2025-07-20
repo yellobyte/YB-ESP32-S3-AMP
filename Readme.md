@@ -3,13 +3,13 @@ The **YB-ESP32-S3-AMP** is a general purpose development board based on Espressi
 
 Apart from the **ESP32-S3** they provides a **microSD** card slot, two **MAX98357A I2S PCM Class D Amplifiers** (for left + right audio channels), **USB-C connector** for software upload, serial output and/or feeding power to the board, **two status LEDs** and lots of **GPIO pins** for free usage.  
 
-**Revision 2** features an USB bridge chip CH340 between USB-C and ESP32-S3. **Revision 3** sees the USB-C port connected directly to the ESP32-S3. 
+**Revision 2** features an USB bridge chip CH340 between USB-C and ESP32-S3 whereas **Revision 3** has the USB-C port connected directly to the ESP32-S3. 
 
 **Which version V2 or V3 fits your purposes best ?**
 
-If you are keen on using the ESP32-S3 built-in JTAG circuitry e.g. with the integrated debugger in the VSCode/PlatformIO dev environment then V3 is your board. However, since the ESP32-S3 is attached directly to the USB-Port you will loose the COM port for a few seconds when you reset them. That can disturb some dev environments and sometimes can be a bit unnerving especially for ESP32-S3 novices. And since it lacks the CH340 bridge chip and with it the little reset/boot circuitry (explained [here](https://github.com/yellobyte/ESP32-DevBoards-Getting-Started/tree/main/reset_and_software_upload)) you need to press the buttons for uploading new software.  
+If you are keen on using the ESP32-S3 built-in JTAG circuitry e.g. with the integrated debugger the VSCode/PlatformIO IDE provides then V3 is your board. However, since the ESP32-S3 is attached directly to the USB-Port your PC will lose the COM port for a few seconds when you reset them. That can disturb some dev environments and sometimes can be a bit unnerving especially for ESP32-S3 novices. And since it lacks the CH340 bridge chip and with it the little reset/boot circuitry (explained [here](https://github.com/yellobyte/ESP32-DevBoards-Getting-Started/tree/main/reset_and_software_upload)) you need to press the buttons for uploading new software.  
 
-If you don't need the integrated JTAG debugging feature then you are better off with the V2 board because your PC will not loose the COM port while resetting the board and the onboard boot/reset logic makes uploading a bit easier since no buttons need to be pressed.
+If you don't need the integrated JTAG debugging feature then you are better off with the V2 board because your PC will not lose the COM port during reset and the onboard boot/reset logic makes uploading a bit easier since no buttons need to be pressed.
 
 <p align="center"><img src="https://github.com/yellobyte/YB-ESP32-S3-AMP/raw/main/doc/YB-ESP32-S3-AMP_Rev2_top_with_screw_terminals.jpg" height="160"/><img src="https://github.com/yellobyte/YB-ESP32-S3-AMP/raw/main/doc/YB-ESP32-S3-AMP_Rev3_top_with_screw_terminals.jpg" height="160"/></p>  
 
