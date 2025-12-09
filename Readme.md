@@ -39,7 +39,7 @@ The densly populated YB-ESP32-S3-AMP board provides multiple GPIO pins (as shown
  - **control LEDs**. One LED labeled 'P' is connected to the 3.3V rail to indicate board power and the other LED labeled 'IO47' is connected to GPIO47 which can be used as status LED.  
  If solder bridge *DAC_MUTE* is closed [default open] this pin can be used for muting the two audio amplifiers: active when GPIO47 is HIGH or muted when GPIO47 is LOW.
  - **USB-C** port connected to ESP32-S3 via USB-TTL bridge chip CH340 (board revision 2.x only) resp. directly to the ESP32-S3 (board revision 3.x only) for serial output and software upload (e.g. via ArduinoIDE, VSCode/PlatformIO etc). Can also be used to power the board.
- - **hardware logic** for *automatic* software uploads (supported by most Development IDEs) via USB-C port on boards with revision 2.x. How this works is explained [here](https://github.com/yellobyte/ESP32-DevBoards-Getting-Started/tree/main/reset_and_software_upload).  
+ - **hardware logic** for *automatic* software uploads (supported by most Development IDEs) via USB-C port on boards with version 2.x. How this works is explained [here](https://github.com/yellobyte/ESP32-DevBoards-Getting-Started/tree/main/reset_and_software_upload).  
  - **pushbuttons**. One is labeled 'R' and resets the ESP32-S3 (shorts EN pin to ground) and the other one is labeled 'B' and shorts GPIO0 to ground when pressed. The latter is sometimes needed to force the board into boot mode.
  - **lots of available GPIOs**, useful for connecting LEDs, buttons, additional modules via second SPI bus or I2C, e.g displays, rotary encoders, bluetooth, etc.
 
@@ -102,19 +102,9 @@ Examples that need to be build with an older framework still come with a folder 
 
 ### Software Upload to the board:
 
-Uploading new software to the board with your IDE normally is a breeze. Select the correct COM port and upload the program.
+Uploading new software to boards with your IDE is a breeze. Select the correct COM port and upload the program. The integrated hardware logic will put the board into upload mode automatically.
 
-However, every now and then an upload might fail and you see this:
-```
-ESP-ROM:esp32s3-20210327
-23:10:07.248 > Build:Mar 27 2021
-23:10:07.251 > rst:0x7 (TG0WDT_SYS_RST),boot:0x8 (SPI_FAST_FLASH_BOOT)
-23:10:07.256 > Saved PC:0x40049087
-23:10:07.256 > invalid header: 0xffffffff
-23:10:07.259 > invalid header: 0xffffffff
-....
-```
-In such case you can force the ESP32-S3 into upload mode *manually*. Keep the **'B'** button pressed, then press/release the **'R'** button and finally release the **'B'** button. The serial monitor output will subsequently confirm the boards readiness and the next upload attempt will be successful.  
+However, at any time and if needed you can force the ESP32-S3 into upload mode *manually*. Keep the **'B'** button pressed, then press/release the **'R'** button and finally release the **'B'** button. The serial monitor output will subsequently confirm the boards readiness and the next upload attempt will be successful.  
 
 ```
 ....
