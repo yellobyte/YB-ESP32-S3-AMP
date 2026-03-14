@@ -82,9 +82,8 @@ void setup()
   Serial.println();
   Serial.println("running example \"Play-All-MP3-Files-on-SD_withBackgroundTask\":");
 
-  // Arduino FSPI default definitions for SS, MOSI, SCK & MISO are 10, 11, 12 & 13
-  // and by default match the boards wiring, so no parameters given
-  spi_onboardSD->begin();
+  // init SD card
+  spi_onboardSD->begin(SCK, MISO, MOSI, SS);
 
   if (!SD.begin(SS, *spi_onboardSD)) {
     Serial.println("error mounting microSD");

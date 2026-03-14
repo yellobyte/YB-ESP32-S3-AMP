@@ -113,9 +113,8 @@ void setup()
   Serial.println();
   Serial.println("Running example \"List-All-Files-with-TFT\":");
 
-  // Arduino FSPI default definitions for SS, MOSI, SCK & MISO are 10, 11, 12 & 13
-  // and by default match the boards wiring, so no parameters given
-  spi_onboardSD->begin();
+  // init SD card
+  spi_onboardSD->begin(SCK, MISO, MOSI, SS);
 
   // HSPI will work on any available GPIO (routed through GPIO matrix)
   spi_tft->begin(TFT_SCLK, TFT_MISO, TFT_MOSI, TFT_CS);
