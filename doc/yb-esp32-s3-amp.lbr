@@ -247,12 +247,12 @@
 <wire x1="53.34" y1="19.424190625" x2="53.34" y2="3.40355" width="0.127" layer="51"/>
 <wire x1="53.34" y1="3.40355" x2="35.56" y2="3.40355" width="0.127" layer="51"/>
 <wire x1="35.56" y1="3.40355" x2="35.56" y2="19.381571875" width="0.127" layer="51"/>
-<wire x1="-8.86125" y1="20.3025" x2="-2.552703125" y2="20.3025" width="0.127" layer="51"/>
-<wire x1="-8.86125" y1="2.5225" x2="-2.552703125" y2="2.5225" width="0.127" layer="51"/>
+<wire x1="-8.86125" y1="17.7625" x2="-2.552703125" y2="17.7625" width="0.127" layer="51"/>
+<wire x1="-8.86125" y1="5.0625" x2="-2.552703125" y2="5.0625" width="0.127" layer="51"/>
 <wire x1="-8.86125" y1="12.20625" x2="-2.533346875" y2="12.20625" width="0.127" layer="51"/>
 <wire x1="-8.86125" y1="10.61875" x2="-2.5398" y2="10.61875" width="0.127" layer="51"/>
-<wire x1="-2.529840625" y1="20.30064375" x2="-2.529840625" y2="12.20439375" width="0.127" layer="51"/>
-<wire x1="-2.542746875" y1="10.63625" x2="-2.542746875" y2="2.54" width="0.127" layer="51"/>
+<wire x1="-2.529840625" y1="17.76064375" x2="-2.529840625" y2="12.20439375" width="0.127" layer="51"/>
+<wire x1="-2.542746875" y1="10.63625" x2="-2.542746875" y2="5.08" width="0.127" layer="51"/>
 <circle x="-6.858" y="22.1615" radius="1.25" width="0.127" layer="21"/>
 <circle x="-6.858" y="0.6604" radius="1.25" width="0.127" layer="21"/>
 <wire x1="-7.403103125" y1="-1.319253125" x2="-8.855784375" y2="0.2340125" width="0.127" layer="21" curve="-91.952552"/>
@@ -264,10 +264,10 @@
 <wire x1="5.96773125" y1="23.490275" x2="6.180634375" y2="22.54834375" width="0.127" layer="51"/>
 <wire x1="18.438671875" y1="22.587053125" x2="17.264484375" y2="22.587053125" width="0.127" layer="51"/>
 <wire x1="17.21930625" y1="22.58568125" x2="6.187084375" y2="22.52471875" width="0.127" layer="51" curve="-25.282858"/>
-<text x="-4.335475" y="2.262278125" size="1.778" layer="51" font="vector" ratio="15" rot="SR270">R</text>
-<text x="-4.25805625" y="21.81418125" size="1.778" layer="51" font="vector" ratio="15" rot="SR270">L</text>
+<text x="-8.145475" y="4.802278125" size="1.778" layer="51" font="vector" ratio="15" rot="SR270">R</text>
+<text x="-8.06805625" y="19.27418125" size="1.778" layer="51" font="vector" ratio="15" rot="SR270">L</text>
 <text x="-6.015484375" y="10.9783875" size="1.27" layer="51" ratio="15">+</text>
-<text x="-5.970325" y="1.3009875" size="1.27" layer="51" ratio="15">+</text>
+<text x="-5.970325" y="3.8409875" size="1.27" layer="51" ratio="15">+</text>
 </package>
 </packages>
 <symbols>
@@ -312,50 +312,13 @@
 </symbols>
 <devicesets>
 <deviceset name="YB-ESP32-S3-AMP" prefix="IC">
-<description>&lt;b&gt;Yellobyte YB-ESP32-S3-AMP (ESP32S3 v2/v3 Audio development board)&lt;/b&gt;&lt;p&gt;
-Source: &lt;a href="https://github.com/yellobyte/ESP32-DevBoards-Getting-Started/tree/main/boards/YB-ESP32-S3-AMP"&gt; github.com/yellobyte &lt;/a&gt;&lt;br&gt;</description>
+<description>&lt;b&gt;Yellobyte YB-ESP32-S3-AMP (ESP32S3 Audio development board)&lt;/b&gt;&lt;p&gt;
+Source: &lt;a href="https://github.com/yellobyte/YB-ESP32-S3-AMP"&gt; github.com/yellobyte &lt;/a&gt;&lt;br&gt;</description>
 <gates>
 <gate name="G$1" symbol="YB-ESP32-S3-AMP" x="0" y="0"/>
 </gates>
 <devices>
-<device name="-V2" package="YB-ESP32-S3-AMP">
-<connects>
-<connect gate="G$1" pin="3V3" pad="3V3"/>
-<connect gate="G$1" pin="5V" pad="5V"/>
-<connect gate="G$1" pin="5V@1" pad="5V@1"/>
-<connect gate="G$1" pin="EN" pad="EN"/>
-<connect gate="G$1" pin="GND" pad="GND"/>
-<connect gate="G$1" pin="GND@1" pad="GND@1"/>
-<connect gate="G$1" pin="GND@2" pad="GND@2"/>
-<connect gate="G$1" pin="IO0" pad="0"/>
-<connect gate="G$1" pin="IO1" pad="1"/>
-<connect gate="G$1" pin="IO10" pad="10"/>
-<connect gate="G$1" pin="IO14" pad="14"/>
-<connect gate="G$1" pin="IO15" pad="15"/>
-<connect gate="G$1" pin="IO16" pad="16"/>
-<connect gate="G$1" pin="IO17" pad="17"/>
-<connect gate="G$1" pin="IO18" pad="18"/>
-<connect gate="G$1" pin="IO2" pad="2"/>
-<connect gate="G$1" pin="IO21" pad="21"/>
-<connect gate="G$1" pin="IO3" pad="3"/>
-<connect gate="G$1" pin="IO38" pad="38"/>
-<connect gate="G$1" pin="IO39" pad="39"/>
-<connect gate="G$1" pin="IO4" pad="4"/>
-<connect gate="G$1" pin="IO40" pad="40"/>
-<connect gate="G$1" pin="IO41" pad="41"/>
-<connect gate="G$1" pin="IO42" pad="42"/>
-<connect gate="G$1" pin="IO47" pad="47"/>
-<connect gate="G$1" pin="IO48" pad="48"/>
-<connect gate="G$1" pin="IO8" pad="8"/>
-<connect gate="G$1" pin="IO9" pad="9"/>
-<connect gate="G$1" pin="RX" pad="RX"/>
-<connect gate="G$1" pin="TX" pad="TX"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="-V3" package="YB-ESP32-S3-AMP">
+<device name="" package="YB-ESP32-S3-AMP">
 <connects>
 <connect gate="G$1" pin="3V3" pad="3V3"/>
 <connect gate="G$1" pin="5V" pad="5V"/>
