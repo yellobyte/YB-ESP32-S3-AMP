@@ -22,7 +22,7 @@ The densly populated YB-ESP32-S3-AMP board provides multiple GPIO pins (as shown
 
 ## YB-ESP32-S3-AMP board features in detail:
  - **ESP32-S3-WROOM-1-N8R2** module with 8MB Flash, 2MB PSRAM, WiFi PCB antenna
- - **2 x MAX98357A** I2S PCM Class D Amplifier (stereo output, 2 x 3.2W @ 4Ohm) connected to the ESP32-S3 as follows:
+ - **2 x MAX98357A** I2S PCM Class D Amplifier (3.2W@4Ω) connected to the ESP32-S3 as follows:
    - *GPIO5 - BCLK* (bit clock)
    - *GPIO6 - LRCLK* (frame clock)
    - *GPIO7 - DIN* (digital audio signal)  
