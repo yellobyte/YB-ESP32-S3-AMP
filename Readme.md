@@ -7,7 +7,7 @@ Apart from the **ESP32-S3** it provides a **microSD** card slot, two **MAX98357A
 
 <p align="center"><img src="https://github.com/yellobyte/YB-ESP32-S3-AMP/raw/main/doc/YB-ESP32-S3-AMP_top_with_screw_terminals.jpg" height="160"/></p>
 
-The onboard USB-Hub (USB high-speed HUB controller chip CH334) allows for **JTAG debugging and watching serial output simultaneously** without any problems. More info further down.
+The onboard USB-Hub (USB high-speed HUB controller chip CH334) allows for **JTAG debugging and watching serial output simultaneously** without interference. More info further down.
 
 Of course you can **connect additional hardware** to the board, e.g. TFT displays, IR receivers or any other module that communicates via I2C/SPI, etc. The **I2S bus signals** (**D**ata, **L**eft/**R**ight (word) clock, **B**it clock) are accessible via **solder pads** on the bottom of the board for attaching external I2S components if needed.  
 
@@ -78,16 +78,30 @@ The board uses a WCH chip CH343P (USB-UART bridge). If you haven't done yet then
 ### Arduino IDE:
 As of Arduino ESP32 Core V3.3.6 you open the board list, enter "yb" and then select "**Yellobyte YB-ESP32-S3-AMP**". Now choose the proper settings for COM port, debug level, etc. as shown below. Be aware, since the ESP32-S3 MCU is very versatile there are a lot of build options to play with. Espressif's homepage offers some help.
 
-Correct **ArduinoIDE** settings for the **YB-ESP32-S3-AMP** board with 8MB Flash & 2MB PSRAM:
+**Settings** for boards with 8MB Flash & 2MB PSRAM:
 - Board: *YB-ESP32-S3-AMP*
 - USB CDC On Boot: _Disabled_
 - Flash Size: *8MB (64Mb)*
-- Partition Scheme: *8MB with spiffs (...)*
+- Partition Scheme: e.g. *8MB with spiffs (...)*, *Default 4MB with spiffs (...)*, etc.
 - PSRAM: *QSPI PSRAM*
 
  ![](https://github.com/yellobyte/YB-ESP32-S3-AMP/raw/main/doc/YB-ESP32-S3-AMP_ArduinoIDE-Settings-N8R2.jpg)
 
-For boards with different WROOM modules (e.g. -N8R8, -N16R8) you need to adjust the settings of course.
+Other WROOM modules (e.g. -N8R8, -N16R8) would require different settings, e.g.:
+
+**Settings** for boards with 16MB Flash & 8MB PSRAM (**-N16R8**):
+- Board: *YB-ESP32-S3-AMP*
+- USB CDC On Boot: _Disabled_
+- Flash Size: *16MB (128Mb)*
+- Partition Scheme: e.g. *16MB with spiffs (...)*, *8MB with spiffs (...)*, *Default 4MB with spiffs (...)*, etc.
+- PSRAM: *OPI PSRAM*  
+
+**Settings** for boards with 8MB Flash & 8MB PSRAM (**-N8R8**):
+- Board: *YB-ESP32-S3-AMP*
+- USB CDC On Boot: _Disabled_
+- Flash Size: *8MB (64Mb)*
+- Partition Scheme: e.g. *8MB with spiffs (...)*, *Default 4MB with spiffs (...)*, etc.
+- PSRAM: *OPI PSRAM*
 
 ### PlatformIO:
 Building with **PlatformIO** is easy as well. Starting with Arduino ESP32 Core v3.3.6 the VSCode/PlatformIO IDE holds all the necessary *.json board files that provide the correct board definitions & settings.
@@ -95,6 +109,13 @@ Building with **PlatformIO** is easy as well. Starting with Arduino ESP32 Core v
 Just create a new project and give it a name, then go to board selection, enter "yb-" and choose your YB-ESP32-S3-AMP*** board from the list thats popping up.
 
  ![](https://github.com/yellobyte/YB-ESP32-S3-AMP/raw/main/doc/YB-ESP32-S3-AMP_PlatformIO_board_selection.jpg)
+
+**Important:** If your board carries a -N16Rx Wroom module make sure to set the correct flash/partition size in *platformio.ini* to account for the 16MB flash available. Otherwise you won't be able to use all flash. Example:  
+&nbsp;&nbsp;&nbsp;...  
+&nbsp;&nbsp;&nbsp;*board_build.partitions = default_16MB.csv  
+&nbsp;&nbsp;&nbsp;board_upload.flash_size = 16MB  
+&nbsp;&nbsp;&nbsp;board_upload.maximum_size = 16777216*  
+&nbsp;&nbsp;&nbsp;...
 
 ### Using the USB-C port:
 With the board connected to your PC/Laptop you'll see 3 additional USB devices. Two COM ports: **Serial USB device** and **USB-Enhanced-Serial CH343** and one device: **USB JTAG/serial debug unit** (or similar, depending on your OS).
