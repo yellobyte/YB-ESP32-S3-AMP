@@ -104,7 +104,7 @@ Other WROOM modules (e.g. -N8R8, -N16R8) would require different settings, e.g.:
 - PSRAM: *OPI PSRAM*
 
 ### PlatformIO:
-Building with **PlatformIO** is easy as well. Starting with Arduino ESP32 Core v3.3.6 the VSCode/PlatformIO IDE holds all the necessary *.json board files which provide default board definitions & settings.
+Building with **PlatformIO** is easy as well. Starting with Arduino ESP32 Core v3.3.6 the VSCode/PlatformIO IDE holds the necessary *.json board file which provides default board definitions & settings.
 
 Just create a new project and give it a name, then go to board selection, enter "yb-" and choose your YB-ESP32-S3-AMP*** board from the list thats popping up.
 
