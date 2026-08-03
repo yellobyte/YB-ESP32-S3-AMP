@@ -14,7 +14,7 @@ Of course you can **connect additional hardware** to the board, e.g. TFT display
 The densly populated YB-ESP32-S3-AMP board provides multiple GPIO pins (as shown below) and is still highly [**breadboard compatible**](https://github.com/yellobyte/YB-ESP32-S3-AMP/raw/main/doc/YB-ESP32-S3-AMP_on_breadboard.jpg) for it leaves one row of accessible breadboard contacts on either side of the board. All I/O ports (GPIOx) are clearly labeled on both sides of the board.  
 
 Please have a look at the provided [examples](https://github.com/yellobyte/YB-ESP32-S3-AMP/tree/main/examples) for PlatformIO resp. ArduinoIDE.
-Most of them use Schreibfaul1's awesome Arduino library [**ESP32-audioI2S**](https://github.com/schreibfaul1/ESP32-audioI2S) which is highly suitable for this board.
+Most of them use Schreibfaul1's Arduino library [**ESP32-audioI2S**](https://github.com/schreibfaul1/ESP32-audioI2S) which is suitable for this board.
 
 ## Quickstart guide:
 **All YB-ESP32-S3-AMP boards delivered have already been flashed with software example 'Play-All-MP3-Files-on-SD'.**
