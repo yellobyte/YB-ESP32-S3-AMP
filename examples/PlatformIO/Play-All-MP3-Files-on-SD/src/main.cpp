@@ -13,7 +13,7 @@
   amps SD_MODE pin. Setting GPIO47 to LOW (LED off) will shut down (mute) the
   amps and setting GPIO47 to HIGH (LED on) will activate the amps.
 
-  Last updated 2026-08-03, ThJ <yellobyte@bluewin.ch>
+  Last updated 2025-04-06, ThJ <yellobyte@bluewin.ch>
 */
 
 #include "Audio.h"
@@ -37,14 +37,14 @@ void searchAudioFiles() {
       // no (more) files in this directory
       dirChain[dirChain.size() - 1].close();
       dirChain.pop_back();
-      break;
+      break; 
     }
     if (entry.isDirectory()) {
       if (dirChain.size() < MAX_PATH_DEPTH) {
         dirChain.push_back(entry);  // dir entry stays open while member of chain
         break;
       }
-    }
+    } 
     else if (String(entry.name()).endsWith("mp3")) {
       Serial.print("now playing: ");
       Serial.println(String(entry.path()));
@@ -57,8 +57,11 @@ void searchAudioFiles() {
   }
 }
 
-void my_audio_info(Audio::msg_t m) {
-    Serial.printf("%s: %s\n", m.s, m.msg);
+void audio_eof_mp3(const char *info) // called at end of each file
+{
+  Serial.print("eof_mp3: ");
+  Serial.println(info);
+  playing = false;
 }
 
 void setup() {
@@ -86,7 +89,6 @@ void setup() {
   root = SD.open("/");
   dirChain.push_back(root);
 
-  audio.audio_info_callback = my_audio_info;
   audio.setPinout(I2S_BCLK, I2S_LRCLK, I2S_DOUT);
   audio.setVolume(6); // 0...21(max)
 }
