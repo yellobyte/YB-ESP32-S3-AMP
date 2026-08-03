@@ -2,7 +2,7 @@
   Play-Radio-Station
 
   Plays a radio station's audio stream over the two MAX98357A I2S amplifiers (left+right audio channels).
-  Make sure you have library "ESP32-audioI2S" added to your project or ArduinoIDE. More info about this versatile lib
+  Make sure you have library "ESP32-audioI2S" v3.4.4 added to your project or ArduinoIDE. More info about this lib
   are available on its homepage "https://github.com/schreibfaul1/ESP32-audioI2S".
 
   Solder bridge DAC_MUTE is open by default and both MAX98357A are active. Closing the solder bridge will connect pin
