@@ -4,7 +4,7 @@
   Plays a radio station's audio stream over the 2 MAX98357A I2S amplifiers (left+right audio channels). An attached 
   TFT display with ILI9431 controller shows some stream info.
 
-  Please add libraries "ESP32-audioI2S", "Adafruit GFX" and "Adafruit ILI9341" to your project or ArduinoIDE.
+  Please add libraries "ESP32-audioI2S" v3.4.4, "Adafruit GFX" and "Adafruit ILI9341" to your project or ArduinoIDE.
 
   Solder bridge DAC_MUTE is open by default and both MAX98357A are active. Closing the solder bridge will connect pin
   GPIO47 (onboard LED IO47) with the amps SD_MODE pin. Setting GPIO47 to LOW (LED off) will shut down (mute) the amps
