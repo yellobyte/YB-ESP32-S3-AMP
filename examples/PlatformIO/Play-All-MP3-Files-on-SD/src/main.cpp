@@ -5,8 +5,8 @@
   MAX98357A I2S amplifiers (left + right audio channels).
 
   Since we use "SD" library which requires the cards CS signal (GPIO10) the
-  solder bridge SD_CS must be closed [default]. Please add libraries "SD" and
-  "ESP32-audioI2S" to your project or ArduinoIDE.
+  solder bridge SD_CS must be closed [default]. Libraries "SD" and
+  "ESP32-audioI2S" v3.4.4 are needed.
 
   Jumper bridge DAC_MUTE is open by default and both MAX98357A are active.
   Closing the jumper bridge will connect pin GPIO47 (onboard LED IO47) with the
