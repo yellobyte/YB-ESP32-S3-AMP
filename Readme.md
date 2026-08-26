@@ -33,7 +33,7 @@ Carrying on you could build and upload one of the many provided ArduinoIDE/Platf
    - *GPIO6 - LRCLK* (frame clock)
    - *GPIO7 - DIN* (digital audio signal)
 
-    Note: GPIOs 5/6/7 are not wired to any board pin, they are exclusively used for the two MAX98357A.
+    Note: GPIOs 5/6/7 are not wired to any board pin, they are exclusively used for the two MAX98357A. However, they are available via labeled solder pins on the bottom of the board.
  - **screw terminals** for connecting 2 loudspeakers (4...8Ω, left + right audio channel)
  - **microSD** card slot connected to the ESP32-S3 via fast SPI bus *FSPI*:
    - *GPIO10 - SCS* (SPI bus control, chip select, this control line is not needed for SD_MMC-lib and available for other usage when solder bridge *SD_CS* is open [default closed])
